@@ -11,7 +11,6 @@ const Game = () => {
   const [simulationRunning, setSimulationRunning] = useState(false);
   const algorithms = ["BFS", "DFS", "A*"];
   const [selectedAlgorithm, setSelectedAlgorithm] = useState("");
-  const actions = ["Run Simulation", "Reset"];
   const [solutionPath, setSolutionPath] = useState<{ x: number; y: number }[]>(
     []
   );
@@ -19,21 +18,6 @@ const Game = () => {
     []
   );
 const [animationTime, setAnimationTime] = useState(250); // Default speed
-
-  const runSimulationAction = () => {
-    if (solutionPath.length > 0) {
-      setSimulationRunning(true);
-      const interval = setInterval(() => {
-        if (solutionPath.length > 0) {
-          setCurrentCell({ X: solutionPath[0].x, Y: solutionPath[0].y });
-          solutionPath.shift();
-        } else {
-          setSimulationRunning(false);
-          clearInterval(interval);
-        }
-      }, 100);
-    }
-  };
 
   const resetAction = () => {
     setSelectedAlgorithm("");
