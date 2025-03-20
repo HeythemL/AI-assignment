@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": {
+        "command": "npm run build",
+        "outputDirectory": "dist"
+      },
     "lint": "eslint .",
     "preview": "vite preview"
   },
