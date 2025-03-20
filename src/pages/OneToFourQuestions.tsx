@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useState } from "react";
+import GraphImg from "../imgs/Graph.png"
 export default function OneToFourQuestions() {
 
   const [showBFSDetails, setShowBFSDetails] = useState(false);
@@ -21,6 +22,8 @@ export default function OneToFourQuestions() {
           robot's allowed actions. The directions **"left"** and **"right"** correspond to the
           left and right sides of the robot, respectively.
         </p>
+        <img src={GraphImg} className="w-full h-auto" />
+
       </div>
 
       {/* Answer 2 */}
